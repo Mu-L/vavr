@@ -4,7 +4,7 @@
  *
  * The MIT License (MIT)
  *
- * Copyright 2024 Vavr, https://vavr.io
+ * Copyright 2025 Vavr, https://vavr.io
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -36,10 +36,10 @@ import io.vavr.collection.List;
 import io.vavr.collection.Seq;
 import io.vavr.collection.Stream;
 import java.util.AbstractMap;
+import java.util.AbstractMap.SimpleEntry;
 import java.util.Comparator;
 import java.util.Map;
-import java.util.Objects;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class Tuple2Test {
 
@@ -237,7 +237,7 @@ public class Tuple2Test {
     @Test
     public void shouldComputeCorrectHashCode() {
         final int actual = createTuple().hashCode();
-        final int expected = Objects.hash(null, null);
+        final int expected = new SimpleEntry<>(null, null).hashCode();
         assertThat(actual).isEqualTo(expected);
     }
 
